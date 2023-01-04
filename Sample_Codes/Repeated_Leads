@@ -1,0 +1,14 @@
+-- Query to find leads doing same activity as last month
+
+SELECT activity_date, event, Count(lead_id) Repeated_Leads 
+FROM Table A
+
+JOIN
+(SELECT event, lead_id 
+FROM Table 
+WHERE event in ('Booking', 'Registration' ) 
+AND activity_date BETWEEN '2022-09-01' and '2022-09-30')B
+ON A.lead_id = B.lead_id and A.event = B.event
+
+WHERE event in ('Booking', 'Registration' )
+AND activity_date BETWEEN '2022-10-01' and '2022-10-31'
