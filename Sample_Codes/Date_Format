@@ -1,0 +1,7 @@
+select 
+FORMAT_DATE('%Y', '2023-01-01') as Year,
+EXTRACT(WEEK FROM date('2023-01-01')) AS WeekNumber,
+concat(FORMAT_DATE('%b %d',date_trunc('2023-01-01',week(MONDAY))), ' to ', FORMAT_DATE('%b %d',date_add(date_trunc('2023-01-01',week(MONDAY)),INTERVAL 6 DAY) )) as Date_Range,  
+concat('Firstname',' ','Lastname') as Full_Name, 
+concat('xxxx',right('12345678',4)) as code,  
+
