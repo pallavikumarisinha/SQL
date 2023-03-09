@@ -1,0 +1,4 @@
+Select 'Name'as Student, case when regexp_contains(lower('https://www.upsc.gov.in/'), r'upsc') then 'UPSC' 
+when regexp_contains(lower('https://www.rrbcdg.gov.in/'), r'rrb') then 'Railway' 
+when regexp_contains(lower('https://www.ibps.in/'), r'rbi|sbi|bank|ibps') then 'Bank' else 'Others'
+end as exam
